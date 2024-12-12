@@ -4,11 +4,27 @@
 		<meta charset="utf-8" />
 		<link rel="icon" href="/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<script>
+			(function (l) {
+				if (l.search[1] === '/') {
+					var decoded = l.search
+						.slice(1)
+						.split('&')
+						.map(function (s) {
+							return s.replace(/~and~/g, '&');
+						})
+						.join('?');
+					window.history.replaceState(null, '', l.pathname.slice(0, -1) + decoded + l.hash);
+				}
+			})(window.location);
+		</script>
+
 		
-		<link rel="modulepreload" href="/_app/immutable/entry/start.CBb2BgWG.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/entry.BxMDTez_.js">
+		<link rel="modulepreload" href="/_app/immutable/entry/start.C1XXk8oP.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/entry.DnRfJYYF.js">
 		<link rel="modulepreload" href="/_app/immutable/chunks/runtime.ClRui8Ww.js">
-		<link rel="modulepreload" href="/_app/immutable/entry/app.ORg8byLQ.js">
+		<link rel="modulepreload" href="/_app/immutable/entry/app.CDG7p7Js.js">
 		<link rel="modulepreload" href="/_app/immutable/chunks/store.Da0eF3_4.js">
 		<link rel="modulepreload" href="/_app/immutable/chunks/disclose-version.DLlm0cRg.js">
 		<link rel="modulepreload" href="/_app/immutable/chunks/if.COUQfg2V.js">
@@ -19,15 +35,15 @@
 		<div style="display: contents">
 			<script>
 				{
-					__sveltekit_c6i4ok = {
+					__sveltekit_xncbg5 = {
 						base: ""
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("/_app/immutable/entry/start.CBb2BgWG.js"),
-						import("/_app/immutable/entry/app.ORg8byLQ.js")
+						import("/_app/immutable/entry/start.C1XXk8oP.js"),
+						import("/_app/immutable/entry/app.CDG7p7Js.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element);
 					});

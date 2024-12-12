@@ -1,54 +1,50 @@
 <!doctype html>
-<html lang="en" dir="ltr">
+<html>
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" href="/favicon.png" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		
-		<link rel="modulepreload" href="/_app/immutable/entry/start.Dof99Hcz.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/entry.g7SpT4Gu.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/runtime.DzPMea9v.js">
-		<link rel="modulepreload" href="/_app/immutable/entry/app.ntsSCJik.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/i18n.CxouymN6.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/disclose-version.Di3rFgGl.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/legacy.3rYuaEWk.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/stores.ByuzFsUS.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/render.BkEqPQ_M.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/svelte-head.C78rSYAV.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/if.DUNXWx6m.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/props.C0QeUgKl.js">
-	</head>
+		<title>Single Page Apps for GitHub Pages</title>
+		<script type="text/javascript">
+			// Single Page Apps for GitHub Pages
+			// MIT License
+			// https://github.com/rafgraph/spa-github-pages
+			// This script takes the current url and converts the path and query
+			// string into just a query string, and then redirects the browser
+			// to the new url with only a query string and hash fragment,
+			// e.g. https://www.foo.tld/one/two?a=b&c=d#qwe, becomes
+			// https://www.foo.tld/?/one/two&a=b~and~c=d#qwe
+			// Note: this 404.html file must be at least 512 bytes for it to work
+			// with Internet Explorer (it is currently > 512 bytes)
 
-	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">
-			<script>
-				{
-					__sveltekit_7z7omy = {
-						base: ""
-					};
+			// If you're creating a Project Pages site and NOT using a custom domain,
+			// then set pathSegmentsToKeep to 1 (enterprise users may need to set it to > 1).
+			// This way the code will only replace the route part of the path, and not
+			// the real directory in which the app resides, for example:
+			// https://username.github.io/repo-name/one/two?a=b&c=d#qwe becomes
+			// https://username.github.io/repo-name/?/one/two&a=b~and~c=d#qwe
+			// Otherwise, leave pathSegmentsToKeep as 0.
+			var pathSegmentsToKeep = 0;
 
-					const element = document.currentScript.parentElement;
-
-					Promise.all([
-						import("/_app/immutable/entry/start.Dof99Hcz.js"),
-						import("/_app/immutable/entry/app.ntsSCJik.js")
-					]).then(([kit, app]) => {
-						kit.start(app, element);
-					});
-				}
-			</script>
-		</div>
-
-		<!-- Google tag (gtag.js) -->
-		<script async src="/ga.js"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag() {
-				dataLayer.push(arguments);
-			}
-			gtag('js', new Date());
-
-			gtag('config', 'G-ZKD5LW2JBJ');
+			var l = window.location;
+			l.replace(
+				l.protocol +
+					'//' +
+					l.hostname +
+					(l.port ? ':' + l.port : '') +
+					l.pathname
+						.split('/')
+						.slice(0, 1 + pathSegmentsToKeep)
+						.join('/') +
+					'/?/' +
+					l.pathname
+						.slice(1)
+						.split('/')
+						.slice(pathSegmentsToKeep)
+						.join('/')
+						.replace(/&/g, '~and~') +
+					(l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+					l.hash
+			);
 		</script>
-	</body>
+	</head>
+	<body></body>
 </html>
